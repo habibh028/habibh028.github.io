@@ -434,7 +434,7 @@ input, textarea { font-family: inherit; }
   font-size: 1.1rem; font-weight: 500; line-height: 1.7;
   color: var(--text-primary); margin-bottom: 16px;
 }
-.avatar-img { width:180px; height:180px; border-radius:50%; object-fit:cover; }
+.avatar-img { width:180px; height:180px; border-radius:80%; object-fit:cover; }
 
 .about-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
 
