@@ -1,1 +1,782 @@
-<H1>Hallo ini Web ku!</H1>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- ===================== META & SEO ===================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Habib Hubaddilah – Fresh Graduate D3 Computer Engineering, Network Engineer & Network Administrator from Palembang. MTCNA & OCNA Certified." />
+  <meta name="keywords" content="Habib Hubaddilah, Network Engineer, Network Administrator, MikroTik, MTCNA, OCNA, Palembang, Universitas Sriwijaya, Fresh Graduate" />
+  <meta name="author" content="Habib Hubaddilah" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Habib Hubaddilah | Network Engineer Portfolio" />
+  <meta property="og:description" content="Fresh Graduate D3 Computer Engineering specializing in Networking, Administration, and Security." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://habibhubaddilah.github.io/" />
+  <meta property="og:image" content="assets/images/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Habib Hubaddilah | Network Engineer Portfolio" />
+  <meta name="twitter:description" content="Fresh Graduate D3 Computer Engineering – Network Engineer & Administrator Enthusiast." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Habib Hubaddilah",
+    "jobTitle": "Network Engineer",
+    "email": "habibhubaddilah3@gmail.com",
+    "telephone": "+6285609430097",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Palembang",
+      "addressRegion": "South Sumatra",
+      "addressCountry": "ID"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universitas Sriwijaya"
+    }
+  }
+  </script>
+
+  <title>Habib Hubaddilah | Network Engineer Portfolio</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+
+  <!-- ===================== FONTS ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ===================== LIBRARIES ===================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- ===================== STYLESHEET ===================== -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-ring">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <p class="loader-text">Initializing<span class="loader-dots">...</span></p>
+  </div>
+
+  <!-- ===================== PROGRESS BAR ===================== -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo / Brand -->
+      <a href="#home" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>HH<span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle light/dark mode">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="menu">
+      <ul role="list">
+        <li><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+        <li><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+        <li><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+        <li><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero">
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <!-- Terminal Window -->
+      <div class="terminal-card" data-aos="fade-up" data-aos-duration="800">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">habib@network:~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="t-line"><span class="t-prompt">$</span> whoami</p>
+          <p class="t-line t-output">habib_hubaddilah</p>
+          <p class="t-line"><span class="t-prompt">$</span> cat role.txt</p>
+          <p class="t-line t-output"><span id="typed-role"></span><span class="cursor-blink">|</span></p>
+          <p class="t-line"><span class="t-prompt">$</span> ping status</p>
+          <p class="t-line t-output t-green">REPLY FROM career: Ready to deploy ✓</p>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Available for Work</span>
+        </div>
+        <h1 class="hero-name">Habib <span class="name-accent">Hubaddilah</span></h1>
+        <h2 class="hero-title">Fresh Graduate D3 Computer Engineering</h2>
+        <h3 class="hero-subtitle">Network Engineer &amp; Network Administrator Enthusiast</h3>
+        <p class="hero-desc">
+          Passionate about Computer Networking, Routing &amp; Switching, Linux Administration, and Network Security.
+          Certified networking enthusiast with hands-on experience in network deployment, troubleshooting, and technical training.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Hire Me
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            <i class="fas fa-code-branch"></i> View Projects
+          </a>
+          <a href="assets/cv-habib-hubaddilah.pdf" class="btn btn-ghost" download>
+            <i class="fas fa-download"></i> Download CV
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Years Learning</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Get to know me</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Avatar / Visual -->
+        <div class="about-visual" data-aos="fade-right" data-aos-delay="100">
+          <div class="avatar-frame">
+            <div class="avatar-placeholder">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring ring2"></div>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="info-card card-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Palembang, Indonesia</span>
+          </div>
+          <div class="info-card card-status">
+            <i class="fas fa-circle status-dot"></i>
+            <span>Open to Work</span>
+          </div>
+        </div>
+
+        <!-- About Text -->
+        <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+          <p class="about-lead">
+            Saya adalah lulusan D3 Teknik Komputer Universitas Sriwijaya yang telah menyelesaikan seluruh perkuliahan dan siap bekerja penuh waktu.
+          </p>
+          <p>
+            Memiliki sertifikasi <strong>MTCNA</strong> dan <strong>OCNA</strong> dengan keahlian dalam administrasi Linux, konfigurasi Routerboard, serta manajemen jaringan. Berpengalaman sebagai IT Intern dan Instruktur Bootcamp MTCNA dengan kemampuan troubleshooting, instalasi jaringan, pelatihan teknis, dan implementasi jaringan komputer.
+          </p>
+
+          <!-- Highlight Chips -->
+          <div class="about-chips">
+            <span class="chip"><i class="fas fa-shield-alt"></i> MTCNA Certified</span>
+            <span class="chip"><i class="fas fa-certificate"></i> OCNA Certified</span>
+            <span class="chip"><i class="fas fa-linux"></i> Linux Admin</span>
+            <span class="chip"><i class="fas fa-chalkboard-teacher"></i> Bootcamp Instructor</span>
+          </div>
+
+          <!-- Personal Details -->
+          <div class="about-details">
+            <div class="detail-row">
+              <span class="detail-label"><i class="fas fa-graduation-cap"></i> Education</span>
+              <span class="detail-value">D3 Teknik Komputer – Unsri</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><i class="fas fa-map-pin"></i> Location</span>
+              <span class="detail-value">Palembang, South Sumatra</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><i class="fas fa-envelope"></i> Email</span>
+              <span class="detail-value">
+                <a href="mailto:habibhubaddilah3@gmail.com">habibhubaddilah3@gmail.com</a>
+              </span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><i class="fas fa-phone"></i> Phone</span>
+              <span class="detail-value">0856-0943-0097</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Technical Toolkit</span>
+        <h2 class="section-title">Skills &amp; <span class="accent">Expertise</span></h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Networking -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="skill-card-icon"><i class="fas fa-network-wired"></i></div>
+          <h3 class="skill-card-title">Networking</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">TCP/IP</span>
+            <span class="skill-tag">Subnetting</span>
+            <span class="skill-tag">VLAN</span>
+            <span class="skill-tag">Routing</span>
+            <span class="skill-tag">Firewall</span>
+            <span class="skill-tag">NAT</span>
+            <span class="skill-tag">VPN</span>
+            <span class="skill-tag">Troubleshooting</span>
+          </div>
+        </div>
+
+        <!-- Network Devices -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card-icon"><i class="fas fa-server"></i></div>
+          <h3 class="skill-card-title">Network Devices</h3>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">MikroTik RouterOS</span>
+            <span class="skill-tag highlight">TP-Link Omada</span>
+            <span class="skill-tag">Cisco</span>
+            <span class="skill-tag">Juniper</span>
+          </div>
+        </div>
+
+        <!-- System & Server -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-card-icon"><i class="fab fa-linux"></i></div>
+          <h3 class="skill-card-title">System &amp; Server</h3>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Linux Admin</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Nginx</span>
+            <span class="skill-tag">VirtualBox</span>
+          </div>
+        </div>
+
+        <!-- Network Tools -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+          <h3 class="skill-card-title">Network Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Winbox</span>
+            <span class="skill-tag">Wireshark</span>
+            <span class="skill-tag">VirtualBox</span>
+            <span class="skill-tag">Docker</span>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="skill-card-icon"><i class="fas fa-users"></i></div>
+          <h3 class="skill-card-title">Soft Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Teamwork</span>
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Technical Training</span>
+          </div>
+        </div>
+
+        <!-- Proficiency Bars -->
+        <div class="skill-card skill-card-wide" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-card-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3 class="skill-card-title">Proficiency</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>MikroTik RouterOS</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Linux Administration</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>TCP/IP &amp; Subnetting</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Docker / Nginx</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Cisco / Juniper</span><span>65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CERTIFICATIONS ===================== -->
+  <section id="certifications" class="section cert-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Credentials</span>
+        <h2 class="section-title">Certi<span class="accent">fications</span></h2>
+      </div>
+
+      <div class="cert-grid">
+
+        <!-- MTCNA -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-glow"></div>
+          <div class="cert-header">
+            <div class="cert-logo mikrotik-logo">
+              <i class="fas fa-router"></i>
+            </div>
+            <div class="cert-badge-label">MTCNA</div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">MikroTik Certified Network Associate</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> MikroTik</p>
+            <div class="cert-meta">
+              <span class="cert-year"><i class="fas fa-calendar-alt"></i> Issued: 2025</span>
+              <span class="cert-status valid">Active</span>
+            </div>
+            <p class="cert-desc">
+              Validates expertise in MikroTik RouterOS including routing, bridging, wireless, firewall, and bandwidth management.
+            </p>
+          </div>
+          <div class="cert-footer">
+            <a href="#" class="btn btn-cert" target="_blank" rel="noopener">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- OCNA -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="cert-glow cert-glow-tplink"></div>
+          <div class="cert-header">
+            <div class="cert-logo tplink-logo">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <div class="cert-badge-label">OCNA</div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Omada Certified Network Administrator</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> TP-Link Omada</p>
+            <div class="cert-meta">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> Valid Until: 2028</span>
+              <span class="cert-status valid">Active</span>
+            </div>
+            <p class="cert-desc">
+              Specialization in Routing &amp; Switching. Covers Omada SDN ecosystem, network planning, and enterprise deployment.
+            </p>
+          </div>
+          <div class="cert-footer">
+            <a href="#" class="btn btn-cert" target="_blank" rel="noopener">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="section exp-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Work History</span>
+        <h2 class="section-title">Exper<span class="accent">ience</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">IT Intern</h3>
+                <p class="timeline-company">
+                  <i class="fas fa-building"></i>
+                  Balai Standarisasi Pelayanan dan Jasa Industri (BSPJI)
+                </p>
+              </div>
+              <span class="timeline-period">
+                <i class="fas fa-calendar"></i> Jul – Aug 2024
+              </span>
+            </div>
+            <ul class="timeline-duties">
+              <li><i class="fas fa-check-circle"></i> Installation and configuration of LAN and WiFi networks</li>
+              <li><i class="fas fa-check-circle"></i> Computer and network maintenance</li>
+              <li><i class="fas fa-check-circle"></i> Hardware and software troubleshooting</li>
+              <li><i class="fas fa-check-circle"></i> Providing technical support to users</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>LAN</span><span>WiFi</span><span>Troubleshooting</span><span>Support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot timeline-dot-accent">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">MTCNA Bootcamp Instructor</h3>
+                <p class="timeline-company">
+                  <i class="fas fa-users"></i>
+                  Network Administrator Club (NAC)
+                </p>
+              </div>
+              <span class="timeline-period">
+                <i class="fas fa-calendar"></i> 2025
+              </span>
+            </div>
+            <ul class="timeline-duties">
+              <li><i class="fas fa-check-circle"></i> Delivered MikroTik Certified Network Associate (MTCNA) training</li>
+              <li><i class="fas fa-check-circle"></i> Taught routing, firewall, NAT, and bandwidth management</li>
+              <li><i class="fas fa-check-circle"></i> Guided hands-on lab sessions</li>
+              <li><i class="fas fa-check-circle"></i> Assisted participants in certification preparation</li>
+              <li><i class="fas fa-check-circle"></i> Improved participants' understanding of MikroTik network implementation</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>MikroTik</span><span>Teaching</span><span>Routing</span><span>Firewall</span><span>NAT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Portfolio</span>
+        <h2 class="section-title">Feat<span class="accent">ured Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-thumb">
+            <div class="project-thumb-icon"><i class="fas fa-balance-scale"></i></div>
+            <div class="project-overlay">
+              <span>Infrastructure Project</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">Docker Swarm</span>
+              <span class="ptag">Raspberry Pi</span>
+              <span class="ptag">Nginx</span>
+            </div>
+            <h3 class="project-title">Smart Farming Load Balancing Server</h3>
+            <p class="project-desc">
+              Implementation of load balancing server architecture for smart farming using Docker Swarm and Single Board Computer with Nginx Reverse Proxy.
+            </p>
+            <div class="project-footer">
+              <a href="#" class="btn-project"><i class="fas fa-code-branch"></i> View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-thumb thumb-juniper">
+            <div class="project-thumb-icon"><i class="fas fa-route"></i></div>
+            <div class="project-overlay">
+              <span>Networking Project</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">Juniper</span>
+              <span class="ptag">IPv4</span>
+              <span class="ptag">Routing</span>
+            </div>
+            <h3 class="project-title">Juniper Static Routing Implementation</h3>
+            <p class="project-desc">
+              Implementation and testing of static routing using Juniper networking devices, covering multi-path routing and failover configuration.
+            </p>
+            <div class="project-footer">
+              <a href="#" class="btn-project"><i class="fas fa-code-branch"></i> View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-thumb thumb-iot">
+            <div class="project-thumb-icon"><i class="fas fa-seedling"></i></div>
+            <div class="project-overlay">
+              <span>IoT Project</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">IoT</span>
+              <span class="ptag">Solar Panel</span>
+              <span class="ptag">Smart Agri</span>
+            </div>
+            <h3 class="project-title">Solar-Based Smart Irrigation System</h3>
+            <p class="project-desc">
+              Smart irrigation solution powered by solar energy for sustainable agriculture, enabling automated water management for farming.
+            </p>
+            <div class="project-footer">
+              <a href="#" class="btn-project"><i class="fas fa-code-branch"></i> View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-thumb thumb-fire">
+            <div class="project-thumb-icon"><i class="fas fa-fire-alt"></i></div>
+            <div class="project-overlay">
+              <span>IoT Project</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">IoT</span>
+              <span class="ptag">Email Alert</span>
+              <span class="ptag">Dashboard</span>
+            </div>
+            <h3 class="project-title">Fire Detection IoT System</h3>
+            <p class="project-desc">
+              Fire detection system capable of sending real-time alerts via email and displaying live monitoring data on a web dashboard.
+            </p>
+            <div class="project-footer">
+              <a href="#" class="btn-project"><i class="fas fa-code-branch"></i> View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" class="section edu-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Academic Background</span>
+        <h2 class="section-title">Educ<span class="accent">ation</span></h2>
+      </div>
+
+      <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="edu-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <div class="edu-body">
+          <h3 class="edu-school">Universitas Sriwijaya</h3>
+          <p class="edu-degree">Diploma III – Computer Engineering (Teknik Komputer)</p>
+          <p class="edu-period"><i class="fas fa-calendar-alt"></i> 2022 – 2026</p>
+          <p class="edu-desc">
+            Focused on computer networking, network administration, and embedded systems. Active member of the Network Administrator Club (NAC), delivering technical training sessions and hands-on networking labs.
+          </p>
+          <div class="edu-highlights">
+            <span><i class="fas fa-star"></i> Network Administrator Club</span>
+            <span><i class="fas fa-star"></i> MTCNA Bootcamp Instructor</span>
+            <span><i class="fas fa-star"></i> IoT Research Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Let's Connect</span>
+        <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+        <p class="section-sub">I'm open to full-time opportunities, freelance projects, and collaboration. Let's build something great together.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Contact Cards -->
+        <div class="contact-cards" data-aos="fade-right" data-aos-delay="100">
+
+          <a href="mailto:habibhubaddilah3@gmail.com" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon email-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">habibhubaddilah3@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+
+          <a href="https://wa.me/6285609430097" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon wa-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">WhatsApp</span>
+              <span class="contact-card-value">0856-0943-0097</span>
+            </div>
+            <i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+
+          <a href="https://linkedin.com/in/habibhubaddilah" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon li-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">linkedin.com/in/habibhubaddilah</span>
+            </div>
+            <i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+
+          <a href="https://github.com/habibhubaddilah" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon gh-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">github.com/habibhubaddilah</span>
+            </div>
+            <i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+
+          <a href="https://instagram.com/habibhubaddilah" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon ig-icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">Instagram</span>
+              <span class="contact-card-value">@habibhubaddilah</span>
+            </div>
+            <i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="200">
+          <form class="contact-form" id="contact-form" novalidate>
+            <h3 class="form-title">Send a Message</h3>
+            <div class="form-group">
+              <label for="f-name">Full Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="f-email">Email Address</label>
+              <input type="email" id="f-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="f-subject">Subject</label>
+              <input type="text" id="f-subject" name="subject" placeholder="Job Opportunity / Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-bracket">&lt;</span>HH<span class="brand-bracket">/&gt;</span>
+          <p>Habib Hubaddilah · Network Engineer</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Habib Hubaddilah. Built with <i class="fas fa-heart" style="color:#ef4444"></i> in Palembang.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
