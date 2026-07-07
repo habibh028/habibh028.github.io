@@ -394,12 +394,32 @@ input, textarea { font-family: inherit; }
   display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center;
 }
 
-.about-visual { position: relative; display: flex; justify-content: center; }
+.about-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 40px;
+}
 
 .avatar-frame {
-  position: relative; width: 220px; height: 220px;
+  position: relative;
+  width: 200px; height: 200px;
   display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
+
+/* Real photo */
+.avatar-photo {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  object-fit: cover; object-position: top center;
+  position: relative; z-index: 1;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-glow), 0 8px 32px rgba(37,99,235,0.3);
+}
+
+/* Fallback icon */
 .avatar-placeholder {
   width: 180px; height: 180px; border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -408,34 +428,37 @@ input, textarea { font-family: inherit; }
   position: relative; z-index: 1;
   box-shadow: 0 0 40px rgba(37,99,235,0.4);
 }
+
 .avatar-ring {
-  position: absolute; inset: 0; border-radius: 50%;
-  border: 2px solid var(--border-accent);
-  animation: rotate-ring 12s linear infinite;
+  position: absolute; inset: -12px; border-radius: 50%;
+  border: 1.5px dashed var(--border-accent);
+  animation: rotate-ring 14s linear infinite;
 }
-.ring2 { inset: -16px; border-color: rgba(6,182,212,0.2); animation-direction: reverse; animation-duration: 18s; }
+.ring2 {
+  inset: -28px; border-color: rgba(6,182,212,0.15);
+  animation-direction: reverse; animation-duration: 22s;
+}
 @keyframes rotate-ring { to { transform: rotate(360deg); } }
 
+/* Floating info cards */
 .info-card {
   position: absolute;
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius-md); padding: 8px 14px;
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.8rem; font-weight: 500;
+  border-radius: var(--radius-md); padding: 7px 13px;
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.75rem; font-weight: 500;
   box-shadow: var(--shadow-md);
-  white-space: nowrap;
+  white-space: nowrap; z-index: 2;
 }
-.card-location { bottom: -10px; left: -20px; color: var(--text-secondary); }
-.card-status   { top: 10px; right: -30px; color: #22c55e; }
-.status-dot { font-size: 0.5rem; color: #22c55e; }
+.card-location { bottom: -4px; left: -8px; color: var(--text-secondary); }
+.card-status   { top: 4px; right: -8px; color: #22c55e; }
+.status-dot { font-size: 0.45rem; color: #22c55e; }
 
 .about-text { }
 .about-lead {
   font-size: 1.1rem; font-weight: 500; line-height: 1.7;
   color: var(--text-primary); margin-bottom: 16px;
 }
-.avatar-img { width:200px; height:200px; border-radius:50%; object-fit:cover; }
-
 .about-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
 
 .about-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
